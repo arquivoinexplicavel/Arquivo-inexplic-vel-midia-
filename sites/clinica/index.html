@@ -3,150 +3,275 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Clínica Sorrir — odontologia</title>
-<meta name="description" content="Clínica Sorrir: limpeza, clareamento, implantes e aparelho. Agende sua avaliação pelo WhatsApp.">
+<title>Clínica Sorrir | Odontologia no Centro</title>
+<meta name="description" content="Clínica odontológica com avaliação gratuita. Limpeza, clareamento, implantes, aparelho e alinhadores. Agende pelo WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&family=Gelasio:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --petroleo:#0E5E63; --petroleo-2:#0A4A4E; --agua:#E4F1EF; --branco:#FFFFFF; --azul-noite:#14303A; --coral:#F07C64; --cinza:#5B6F75;
-  }
+  :root{--azul:#0D4F5C;--azul-2:#0A3F4A;--agua:#EAF4F3;--agua-2:#D5EAE7;--branco:#fff;--texto:#16313A;--suave:#5C727A;--linha:#E1ECEB;--destaque:#F2A65A}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--branco);color:var(--azul-noite);font:300 1.0625rem/1.65 "Lexend",system-ui,sans-serif}
-  a{color:inherit}
-  :focus-visible{outline:3px solid var(--coral);outline-offset:3px}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-  h1,h2,h3{font-weight:600;line-height:1.1}
+  html{scroll-behavior:smooth}
+  body{background:var(--branco);color:var(--texto);font:400 16.5px/1.65 "Manrope",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:3px solid var(--destaque);outline-offset:3px}
+  .wrap{max-width:1200px;margin:0 auto;padding-inline:24px}
+  h1,h2,h3{font-weight:800;line-height:1.12;letter-spacing:-.02em}
+  h2{font-size:clamp(1.9rem,3.6vw,2.7rem)}
+  .intro{color:var(--suave);max-width:58ch;margin-top:12px}
+  section{padding-block:96px}
 
-  header .wrap{display:flex;justify-content:space-between;align-items:center;padding:20px}
-  .marca{font-weight:600;font-size:1.2rem;text-decoration:none;color:var(--petroleo)}
-  header a.tel{text-decoration:none;color:var(--cinza)}
+  .barra{background:var(--azul-2);color:#CFE3E1;font-size:13.5px}
+  .barra .wrap{display:flex;justify-content:space-between;gap:16px;padding-block:9px}
+  nav.topo{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha)}
+  nav.topo .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--azul)}
+  .logo svg{width:32px;height:32px}
+  .menu{display:flex;gap:30px;font-weight:600;font-size:15px;color:#33505A}
+  .menu a:hover{color:var(--azul)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--azul);color:#fff;font-weight:700;padding:14px 26px;border-radius:12px;border:0;font:inherit;font-weight:700;cursor:pointer;transition:background .2s}
+  .btn:hover{background:var(--azul-2)}
+  .btn.claro{background:var(--agua);color:var(--azul)}
+  .btn.claro:hover{background:var(--agua-2)}
 
-  .hero{background:var(--agua);border-radius:28px;margin:0 20px;padding:64px 0}
-  .hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
-  .hero h1{font-size:clamp(2.4rem,5.5vw,4rem);color:var(--azul-noite)}
-  .hero h1 em{font-family:"Gelasio",serif;font-weight:400}
-  .hero p{max-width:40ch;margin-top:18px;color:var(--cinza);font-size:1.15rem}
+  .hero{padding-block:48px 0}
+  .hero .grade{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.5rem,5vw,3.9rem)}
+  .hero p{font-size:18.5px;color:var(--suave);max-width:44ch;margin-top:20px}
+  .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .confianca{display:flex;align-items:center;gap:14px;margin-top:36px;font-size:14.5px;color:var(--suave)}
+  .rostos{display:flex}
+  .rostos span{width:38px;height:38px;border-radius:50%;border:3px solid #fff;margin-left:-10px;display:grid;place-items:center;font-weight:700;font-size:14px;color:#fff}
+  .rostos span:first-child{margin-left:0}
+  .estrelas{color:#F2A65A;letter-spacing:1px}
+  .foto-hero{position:relative}
+  .foto-hero img{border-radius:24px;aspect-ratio:1/1;object-fit:cover;width:100%}
+  .cartao{position:absolute;background:#fff;border-radius:16px;box-shadow:0 18px 40px rgba(13,79,92,.16);padding:16px 18px;font-size:14px}
+  .cartao b{display:block;font-size:15.5px}
+  .cartao.c1{left:-32px;top:40px}
+  .cartao.c2{right:24px;bottom:-24px;display:flex;align-items:center;gap:12px}
+  .icone{width:40px;height:40px;border-radius:12px;background:var(--agua);display:grid;place-items:center;color:var(--azul)}
+  .icone svg{width:22px;height:22px}
 
-  .agenda{background:var(--branco);border-radius:20px;padding:28px;box-shadow:0 18px 40px rgba(14,94,99,.14)}
-  .agenda h2{font-size:1.35rem}
-  .agenda p.ajuda{color:var(--cinza);font-size:.95rem;margin:4px 0 18px}
-  fieldset{border:0;margin-bottom:18px}
-  legend{font-weight:600;font-size:.95rem;margin-bottom:8px}
-  .opcoes{display:flex;flex-wrap:wrap;gap:8px}
-  .opcoes input{position:absolute;opacity:0;pointer-events:none}
-  .opcoes label{border:1.5px solid #BFD9D6;border-radius:10px;padding:9px 14px;cursor:pointer;font-size:.95rem;transition:background .15s,border-color .15s}
-  .opcoes input:checked+label{background:var(--petroleo);border-color:var(--petroleo);color:#fff}
-  .opcoes input:focus-visible+label{outline:3px solid var(--coral);outline-offset:2px}
-  .btn{display:block;width:100%;text-align:center;background:var(--coral);color:#3A130A;font-weight:600;padding:15px;border-radius:12px;text-decoration:none;border:0;font:inherit;font-weight:600;cursor:pointer}
-  .btn:hover{background:#F4917D}
-  .resumo{font-size:.9rem;color:var(--cinza);margin-top:10px;min-height:1.4em}
+  .agendar{margin-top:72px}
+  .agendar form{background:var(--azul);color:#fff;border-radius:20px;padding:28px 32px;display:grid;grid-template-columns:1.2fr 1fr 1fr auto;gap:18px;align-items:end}
+  .agendar label{display:block;font-size:13.5px;font-weight:600;color:#BFD9D6;margin-bottom:6px}
+  .agendar select{width:100%;padding:13px 14px;border-radius:10px;border:0;font:inherit;color:var(--texto);background:#fff}
+  .agendar .btn{background:var(--destaque);color:#2A1700;height:48px}
+  .agendar .btn:hover{background:#F5B877}
 
-  .tratamentos{padding-block:96px}
-  .tratamentos h2{font-size:2.2rem;max-width:20ch}
-  .lista{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 48px;margin-top:40px}
-  .lista h3{font-size:1.15rem;color:var(--petroleo);margin-bottom:6px}
-  .lista p{color:var(--cinza)}
+  .convenios{padding-block:56px;border-bottom:1px solid var(--linha)}
+  .convenios .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;color:#8AA0A6;font-weight:700;font-size:18px}
+  .convenios small{font-size:14px;font-weight:600;color:var(--suave)}
 
-  .equipe{background:var(--petroleo);color:#fff;padding:80px 0}
-  .equipe .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-  .equipe blockquote{font-family:"Gelasio",serif;font-style:italic;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.3}
-  .equipe cite{display:block;margin-top:16px;font-style:normal;opacity:.8;font-size:1rem}
-  .equipe ul{list-style:none}
-  .equipe li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.2)}
+  .tratamentos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+  .trat{border:1px solid var(--linha);border-radius:18px;overflow:hidden;background:#fff;transition:box-shadow .2s}
+  .trat:hover{box-shadow:0 14px 34px rgba(13,79,92,.10)}
+  .trat img{aspect-ratio:16/10;object-fit:cover;width:100%}
+  .trat div{padding:22px 24px 26px}
+  .trat h3{font-size:19px}
+  .trat p{color:var(--suave);font-size:15px;margin-top:6px}
+  .trat a{display:inline-block;margin-top:14px;font-weight:700;color:var(--azul);font-size:15px}
 
-  .contato{padding-block:80px;display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
-  .contato h3{font-size:1.1rem;margin-bottom:6px;color:var(--petroleo)}
-  footer{padding:24px 0;color:var(--cinza);font-size:.9rem;border-top:1px solid #DCE8E6}
+  .dif{background:var(--agua)}
+  .dif .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .dif img{border-radius:24px;aspect-ratio:4/5;object-fit:cover;width:100%}
+  .itens{display:grid;gap:22px;margin-top:32px}
+  .item{display:flex;gap:16px}
+  .item .icone{background:#fff;flex:none}
+  .item b{display:block;font-size:17px}
+  .item span{color:var(--suave);font-size:15px}
 
-  @media (max-width:860px){
-    .hero{margin:0 12px;padding:40px 0}
-    .hero .wrap,.equipe .wrap,.lista,.contato{grid-template-columns:1fr}
-    header a.tel{display:none}
+  .equipe{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+  .pessoa img{border-radius:18px;aspect-ratio:4/5;object-fit:cover;width:100%}
+  .pessoa h3{font-size:19px;margin-top:14px}
+  .pessoa p{color:var(--suave);font-size:15px}
+
+  .avaliacoes{background:var(--azul);color:#fff}
+  .avaliacoes h2{color:#fff}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+  .card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:28px}
+  .card p{margin:12px 0 18px;color:#E3F0EE}
+  .card small{color:#A9C7C3}
+
+  .faq-local .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+  details{border-bottom:1px solid var(--linha);padding:18px 0}
+  summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::after{content:"+";color:var(--azul);font-size:22px;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--suave);margin-top:8px}
+  .mapa{border:0;width:100%;height:300px;border-radius:18px;margin-top:24px}
+  .contatos{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px;font-size:15px}
+  .contatos b{display:block}
+  .contatos span{color:var(--suave)}
+
+  footer{background:var(--azul-2);color:#B5CFCB;padding-block:60px 30px;font-size:15px}
+  footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+  footer .logo{color:#fff}
+  footer h4{color:#fff;margin-bottom:10px}
+  footer li{list-style:none;margin-bottom:6px}
+  .copy{margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);font-size:13px}
+
+  .flutuante{position:fixed;right:20px;bottom:20px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+  .flutuante svg{width:30px;height:30px;fill:#fff}
+
+  @media (max-width:900px){
+    .menu,.barra .esconde{display:none}
+    section{padding-block:72px}
+    .hero .grade,.tratamentos,.dif .wrap,.equipe,.cards,.faq-local .wrap,footer .cols{grid-template-columns:1fr}
+    .agendar form{grid-template-columns:1fr;padding:24px}
+    .cartao.c1{left:12px;top:12px}
+    .cartao.c2{right:12px;bottom:12px}
+    nav.topo .btn{padding:10px 16px;font-size:14px}
   }
 </style>
 </head>
 <body>
-<header><div class="wrap"><a class="marca" href="#">Clínica Sorrir</a><a class="tel" href="tel:+5511999999999">(11) 99999-9999</a></div></header>
+<div class="barra"><div class="wrap"><span>Rua Sete de Setembro, 580 · Centro</span><span class="esconde">Seg a sex 8h–20h · Sáb 8h–12h</span></div></div>
+<nav class="topo" aria-label="Principal">
+  <div class="wrap">
+    <a class="logo" href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#0D4F5C"/><path d="M10 9c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7.5.4 2.4 1 4 2.2 4 1.4 0 1.6-2.6 2.2-4.4.4-1.2 1-1.6 1.6-1.6s1.2.4 1.6 1.6c.6 1.8.8 4.4 2.2 4.4 1.2 0 1.8-1.6 2.2-4 .5-3 2-4.5 2-7.5C26 11 24.5 9 22 9c-2.2 0-3.4 1.4-6 1.4S12.2 9 10 9Z" fill="#fff"/></svg>Clínica Sorrir</a>
+    <div class="menu"><a href="#tratamentos">Tratamentos</a><a href="#equipe">Equipe</a><a href="#avaliacoes">Avaliações</a><a href="#contato">Contato</a></div>
+    <a class="btn" href="#agendar">Agendar avaliação</a>
+  </div>
+</nav>
 
-<section class="hero">
+<header class="hero">
+  <div class="wrap">
+    <div class="grade">
+      <div>
+        <h1>Seu sorriso cuidado com calma e sem surpresas no orçamento</h1>
+        <p>Avaliação gratuita com plano de tratamento por escrito. Você sabe o que vai fazer e quanto vai pagar antes de começar.</p>
+        <div class="acoes">
+          <a class="btn" href="#agendar">Agendar avaliação gratuita</a>
+          <a class="btn claro" href="#tratamentos">Ver tratamentos</a>
+        </div>
+        <div class="confianca">
+          <div class="rostos"><span style="background:#2E8C84">M</span><span style="background:#F2A65A">J</span><span style="background:#5B7FA6">C</span><span style="background:#9A6FB0">A</span></div>
+          <div><span class="estrelas">★★★★★</span> <b>4,9</b> · mais de 520 avaliações no Google</div>
+        </div>
+      </div>
+      <div class="foto-hero">
+        <img src="img/hero.jpg" alt="Consultório odontológico moderno e iluminado" fetchpriority="high">
+        <div class="cartao c1"><b>+ de 8 mil</b>pacientes atendidos</div>
+        <div class="cartao c2"><span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Parcelamos em 12x</b>sem entrada</div></div>
+      </div>
+    </div>
+
+    <div class="agendar" id="agendar">
+      <form id="form-agenda">
+        <div><label for="trat">Tratamento</label><select id="trat"><option>Avaliação gratuita</option><option>Limpeza</option><option>Clareamento</option><option>Aparelho / alinhador</option><option>Implante</option><option>Dor ou urgência</option></select></div>
+        <div><label for="dia">Dia</label><select id="dia"></select></div>
+        <div><label for="periodo">Período</label><select id="periodo"><option>Manhã</option><option>Tarde</option><option>Noite</option></select></div>
+        <button class="btn" type="submit">Agendar pelo WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<div class="convenios"><div class="wrap"><small>Atendemos os principais convênios</small><span>Amil Dental</span><span>OdontoPrev</span><span>SulAmérica</span><span>Bradesco Dental</span><span>MetLife</span></div></div>
+
+<section id="tratamentos">
+  <div class="wrap">
+    <h2>Tratamentos</h2>
+    <p class="intro">Do check-up de rotina à reabilitação completa, tudo no mesmo lugar e com a mesma equipe.</p>
+    <div class="tratamentos">
+      <article class="trat"><img src="img/atendimento.jpg" alt="Dentista atendendo paciente na cadeira" loading="lazy"><div><h3>Limpeza e prevenção</h3><p>Remoção de tártaro, polimento e aplicação de flúor. Recomendado a cada 6 meses.</p><a href="#agendar">Agendar</a></div></article>
+      <article class="trat"><img src="img/alinhador.jpg" alt="Paciente colocando alinhador transparente" loading="lazy"><div><h3>Alinhadores e aparelho</h3><p>Alinhador transparente ou aparelho fixo, com simulação digital do resultado.</p><a href="#agendar">Agendar</a></div></article>
+      <article class="trat"><img src="img/raiox.jpg" alt="Dentista analisando radiografias" loading="lazy"><div><h3>Implantes</h3><p>Planejamento por tomografia e implante com prótese fixa em poucas sessões.</p><a href="#agendar">Agendar</a></div></article>
+      <article class="trat"><img src="img/sorriso.jpg" alt="Exame do sorriso com espelho odontológico" loading="lazy"><div><h3>Clareamento</h3><p>No consultório ou caseiro com moldeira, com acompanhamento até o tom desejado.</p><a href="#agendar">Agendar</a></div></article>
+      <article class="trat"><img src="img/consultorio.jpg" alt="Consultório com cadeira odontológica" loading="lazy"><div><h3>Canal e restaurações</h3><p>Tratamento de canal com equipamento rotatório e restaurações da cor do dente.</p><a href="#agendar">Agendar</a></div></article>
+      <article class="trat"><img src="img/dentista.jpg" alt="Dentista segurando instrumentos" loading="lazy"><div><h3>Urgência</h3><p>Dor de dente ou dente quebrado? Atendemos no mesmo dia, conforme a agenda.</p><a href="#agendar">Agendar</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="dif">
+  <div class="wrap">
+    <img src="img/consultorio.jpg" alt="Sala de atendimento da clínica" loading="lazy">
+    <div>
+      <h2>Por que nossos pacientes ficam</h2>
+      <div class="itens">
+        <div class="item"><span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 12h6M9 16h6M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/></svg></span><div><b>Orçamento por escrito</b><span>Plano de tratamento detalhado, com valores, antes de qualquer procedimento.</span></div></div>
+        <div class="item"><span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Horário respeitado</b><span>Atraso médio de menos de 10 minutos. Atendemos até as 20h.</span></div></div>
+        <div class="item"><span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.4-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 6.6-7 11-7 11Z"/></svg></span><div><b>Atendimento para quem tem medo</b><span>Explicamos cada etapa e você pode pausar quando quiser.</span></div></div>
+        <div class="item"><span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></span><div><b>Parcelamento em até 12x</b><span>Cartão, Pix ou boleto, sem entrada.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="equipe">
+  <div class="wrap">
+    <h2>Nossa equipe</h2>
+    <p class="intro">Dentistas especialistas, com atualização constante e atendimento humano.</p>
+    <div class="equipe">
+      <div class="pessoa"><img src="img/dentista.jpg" alt="Dra. Ana Ribeiro" loading="lazy"><h3>Dra. Ana Ribeiro</h3><p>Ortodontia e alinhadores · CRO-SP 00000</p></div>
+      <div class="pessoa"><img src="img/raiox.jpg" alt="Dr. Paulo Mendes" loading="lazy"><h3>Dr. Paulo Mendes</h3><p>Implantes e prótese · CRO-SP 00000</p></div>
+      <div class="pessoa"><img src="img/atendimento.jpg" alt="Dra. Carla Lima" loading="lazy"><h3>Dra. Carla Lima</h3><p>Clínica geral e estética · CRO-SP 00000</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="avaliacoes" id="avaliacoes">
+  <div class="wrap">
+    <h2>O que dizem nossos pacientes</h2>
+    <div class="cards">
+      <article class="card"><span class="estrelas">★★★★★</span><p>Fazia oito anos que eu não ia ao dentista de tanto medo. Explicaram tudo antes e terminei o tratamento.</p><small>Mariana S. · Google</small></article>
+      <article class="card"><span class="estrelas">★★★★★</span><p>Coloquei implante com o Dr. Paulo. Orçamento claro, sem surpresa no final, e resultado perfeito.</p><small>José Carlos R. · Google</small></article>
+      <article class="card"><span class="estrelas">★★★★★</span><p>Uso alinhador há 8 meses e já vejo a diferença. A clínica sempre me encaixa depois do trabalho.</p><small>Camila T. · Google</small></article>
+    </div>
+  </div>
+</section>
+
+<section class="faq-local" id="contato">
   <div class="wrap">
     <div>
-      <h1>Dentista sem medo, <em>com calma</em> e explicando cada passo.</h1>
-      <p>Primeira avaliação gratuita. Você sai sabendo exatamente o que precisa fazer e quanto vai custar, antes de começar qualquer tratamento.</p>
+      <h2>Dúvidas frequentes</h2>
+      <div style="margin-top:20px">
+        <details><summary>A avaliação é mesmo gratuita?</summary><p>Sim. Fazemos o exame clínico e entregamos o plano de tratamento com valores, sem compromisso.</p></details>
+        <details><summary>Vocês atendem convênio?</summary><p>Atendemos os principais convênios odontológicos. Confirme o seu pelo WhatsApp.</p></details>
+        <details><summary>Quanto custa um clareamento?</summary><p>A partir de R$ 690, parcelado em até 12x. O valor exato depende da avaliação.</p></details>
+        <details><summary>Atendem urgência?</summary><p>Sim, de segunda a sábado, encaixando no mesmo dia sempre que possível.</p></details>
+      </div>
     </div>
-    <form class="agenda" id="agenda">
-      <h2>Agende sua avaliação</h2>
-      <p class="ajuda">Escolha o dia e o período. A mensagem já vai pronta para o nosso WhatsApp.</p>
-      <fieldset><legend>Dia</legend><div class="opcoes" id="dias"></div></fieldset>
-      <fieldset><legend>Período</legend><div class="opcoes">
-        <input type="radio" name="periodo" id="p1" value="manhã (8h–12h)" checked><label for="p1">Manhã</label>
-        <input type="radio" name="periodo" id="p2" value="tarde (13h–18h)"><label for="p2">Tarde</label>
-        <input type="radio" name="periodo" id="p3" value="noite (18h–20h)"><label for="p3">Noite</label>
-      </div></fieldset>
-      <button class="btn" type="submit">Enviar pelo WhatsApp</button>
-      <p class="resumo" id="resumo"></p>
-    </form>
+    <div>
+      <h2>Onde estamos</h2>
+      <div class="contatos">
+        <div><b>Endereço</b><span>Rua Sete de Setembro, 580, sala 12 – Centro</span></div>
+        <div><b>Horário</b><span>Seg a sex 8h–20h<br>Sáb 8h–12h</span></div>
+        <div><b>Telefone</b><span>(11) 99999-9999</span></div>
+        <div><b>Instagram</b><span>@clinicasorrir</span></div>
+      </div>
+      <iframe class="mapa" title="Mapa da clínica" loading="lazy" src="https://maps.google.com/maps?q=Pra%C3%A7a%20da%20S%C3%A9%2C%20S%C3%A3o%20Paulo&z=16&output=embed"></iframe>
+    </div>
   </div>
 </section>
 
-<section class="tratamentos wrap">
-  <h2>O que fazemos por aqui</h2>
-  <div class="lista">
-    <div><h3>Limpeza e prevenção</h3><p>Remoção de tártaro e orientação de escovação. O ideal é a cada seis meses.</p></div>
-    <div><h3>Clareamento</h3><p>No consultório ou com moldeira para usar em casa, com acompanhamento.</p></div>
-    <div><h3>Aparelho ortodôntico</h3><p>Fixo ou alinhador transparente, para adolescentes e adultos.</p></div>
-    <div><h3>Implantes</h3><p>Reposição de dentes perdidos, com planejamento por tomografia.</p></div>
-    <div><h3>Canal</h3><p>Tratamento com anestesia e aparelho rotatório, em menos sessões.</p></div>
-    <div><h3>Odontopediatria</h3><p>Atendimento para crianças, sem pressa e sem susto.</p></div>
-  </div>
-</section>
-
-<section class="equipe">
+<footer>
   <div class="wrap">
-    <blockquote>“Fazia oito anos que eu não ia ao dentista de tanto medo. Aqui me explicaram tudo antes e eu voltei pra terminar o tratamento.”<cite>Mariana, paciente desde 2023</cite></blockquote>
-    <ul>
-      <li>Dra. Ana Ribeiro — ortodontia (CRO 00000)</li>
-      <li>Dr. Paulo Mendes — implantes (CRO 00000)</li>
-      <li>Parcelamento em até 12 vezes</li>
-      <li>Atendemos os principais convênios</li>
-    </ul>
+    <div class="cols">
+      <div><span class="logo">Clínica Sorrir</span><p style="margin-top:12px;max-width:34ch">Odontologia completa no Centro, com avaliação gratuita.</p></div>
+      <div><h4>Tratamentos</h4><ul><li>Limpeza</li><li>Alinhadores</li><li>Implantes</li><li>Clareamento</li></ul></div>
+      <div><h4>Contato</h4><ul><li>(11) 99999-9999</li><li>WhatsApp</li><li>Instagram</li></ul></div>
+      <div><h4>Horário</h4><ul><li>Seg a sex: 8h–20h</li><li>Sáb: 8h–12h</li></ul></div>
+    </div>
+    <div class="copy">© 2026 Clínica Sorrir · Responsável técnica: Dra. Ana Ribeiro, CRO-SP 00000</div>
   </div>
-</section>
+</footer>
 
-<section class="wrap contato">
-  <div><h3>Endereço</h3><p>Rua Sete de Setembro, 580, sala 12<br>Sua Cidade</p></div>
-  <div><h3>Horário</h3><p>Segunda a sexta, 8h às 20h<br>Sábado, 8h às 12h</p></div>
-  <div><h3>Contato</h3><p>(11) 99999-9999<br>@clinicasorrir</p></div>
-</section>
-
-<footer><div class="wrap">Clínica Sorrir · Responsável técnico: Dra. Ana Ribeiro, CRO 00000</div></footer>
+<a class="flutuante" href="https://wa.me/5511999999999" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3Z"/></svg></a>
 
 <script>
-  const nomes = ["dom","seg","ter","qua","qui","sex","sáb"];
-  const dias = document.getElementById("dias");
-  let d = new Date(), n = 0, html = "";
-  while (n < 5) {
-    d.setDate(d.getDate() + 1);
-    if (d.getDay() === 0) continue;
-    const valor = `${nomes[d.getDay()]} ${d.getDate()}/${d.getMonth()+1}`;
-    html += `<input type="radio" name="dia" id="d${n}" value="${valor}" ${n===0?"checked":""}><label for="d${n}">${valor}</label>`;
-    n++;
-  }
-  dias.innerHTML = html;
-  const form = document.getElementById("agenda");
-  const resumo = document.getElementById("resumo");
-  function atualiza(){
-    const f = new FormData(form);
-    resumo.textContent = `Avaliação: ${f.get("dia")}, ${f.get("periodo")}.`;
-  }
-  form.addEventListener("change", atualiza); atualiza();
-  form.addEventListener("submit", e => {
+  const nomes=["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
+  const sel=document.getElementById("dia"); let d=new Date(), n=0;
+  while(n<6){d.setDate(d.getDate()+1); if(d.getDay()===0)continue;
+    const o=document.createElement("option"); o.textContent=`${nomes[d.getDay()]}, ${d.getDate()}/${d.getMonth()+1}`; sel.appendChild(o); n++;}
+  document.getElementById("form-agenda").addEventListener("submit",e=>{
     e.preventDefault();
-    const f = new FormData(form);
-    const msg = `Olá! Quero agendar uma avaliação na Clínica Sorrir para ${f.get("dia")}, período da ${f.get("periodo")}.`;
-    window.open("https://wa.me/5511999999999?text=" + encodeURIComponent(msg), "_blank", "noopener");
+    const msg=`Olá! Quero agendar: ${document.getElementById("trat").value}, ${sel.value}, período da ${document.getElementById("periodo").value.toLowerCase()}.`;
+    window.open("https://wa.me/5511999999999?text="+encodeURIComponent(msg),"_blank","noopener");
   });
 </script>
 </body>
